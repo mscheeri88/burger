@@ -2,7 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 var burger = require("../models/burger.js");
 
 
@@ -10,9 +10,9 @@ var burger = require("../models/burger.js");
 
 //default url route
 router.get("/", function(req, res) {
-  //requests the cat.all function
-// res.send('yoo')
-  // responds, with the data from result*
+  //requests the get all function
+  // res.send('Whats Up!!!')
+  // responds, with the data from result
   burger.all(function(data) {
   
   //need to turn the data into an object for handlebars to work
@@ -31,7 +31,7 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res) {
 
   burger.create([
-   //this will be the cols
+   //this will be the columns created
     "burger_name", "devoured"
   ], [
     //and this vals for the cols3
